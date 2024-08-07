@@ -39,6 +39,10 @@
 				border: none;
 				padding: none;
 				margin-right: 5px;
+				opacity: 0.5;
+				&.active {
+					opacity: 1;
+				}
 
 				&:last-child {
 					margin-right: 0;
