@@ -1,4 +1,7 @@
 <script lang="ts">
+	import BracketL from '@src/lib/images/bracket-l.svg?component';
+	import BracketR from '@src/lib/images/bracket-r.svg?component';
+
 	export let title: string;
 	export let orderNumber: string;
 	export let isCurrent: boolean;
@@ -6,19 +9,22 @@
 
 <li class="menu-item {isCurrent && 'current'}" on:click>
 	<span class="item-number">{orderNumber}</span>
-	<span class="bracket-l {isCurrent && 'show'}"><img src="/src/lib/images/bracket-l.svg" /></span>
+	<span class="bracket-l {isCurrent && 'show'}"><BracketL /></span>
 	<h2 class="item-title">{title}</h2>
-	<span class="bracket-r {isCurrent && 'show'}"><img src="/src/lib/images/bracket-r.svg" /></span>
+	<span class="bracket-r {isCurrent && 'show'}"><BracketR /></span>
 </li>
 
 <style lang="scss">
+	@use 'src/styles/index.scss' as *;
+
 	.menu-item {
 		display: flex;
 		align-items: end;
 		height: 150px;
 		border-bottom: 1px solid #d9e2f3;
+		cursor: pointer;
 		&.current {
-			border-left: 6px solid #1058d5;
+			border-left: 6px solid $cyber-blue;
 		}
 	}
 
@@ -27,11 +33,12 @@
 		display: none;
 		&.show {
 			display: inline-block;
+			color: $cyber-blue;
 		}
 	}
 
 	.item-title {
-		color: #1058d5;
+		color: $cyber-blue;
 		text-transform: uppercase;
 		font:
 			400 30px/1 Space Grotesk,
@@ -40,7 +47,7 @@
 	}
 
 	.item-number {
-		color: #1058d5;
+		color: $cyber-blue;
 		font-family: Space Grotesk;
 		font-size: 14px;
 		font-weight: 400;

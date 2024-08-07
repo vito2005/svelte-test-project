@@ -11,7 +11,9 @@
 	{/each}
 </div>
 
-<style>
+<style lang="scss">
+	@use 'src/styles/index.scss' as *;
+
 	.language-selector {
 		display: flex;
 		width: 304px;
@@ -37,7 +39,7 @@
 	}
 
 	.lang-button.active {
-		color: #1058d5;
+		color: $cyber-blue;
 	}
 
 	@media (max-width: 991px) {
