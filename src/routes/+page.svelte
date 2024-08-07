@@ -9,6 +9,7 @@
 	import vImage from '$lib/images/v-issues.jpg';
 	import bgImage from '$lib/images/background-image.jpg';
 	import DesktopMenu from '@src/components/menu/DesktopMenu.svelte';
+	import LangSelector from '@src/components/menu/LangSelector.svelte';
 
 	let menuOpen = false;
 
@@ -68,6 +69,7 @@
 		{#if menuOpen}
 			<MobileMenu {menuItems} />
 		{/if}
+		<LangSelector />
 	</header>
 	<section class="section-1">
 		<div class="scroll-down">
@@ -142,6 +144,7 @@
 		display: flex;
 		padding: 7px;
 		width: 100%;
+		position: relative;
 	}
 	@media screen and (max-width: $desktop) {
 		.header {

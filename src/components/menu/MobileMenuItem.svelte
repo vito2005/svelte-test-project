@@ -65,7 +65,7 @@
 		margin-top: 12px;
 	}
 
-	@media (max-width: 991px) {
+	@media (max-width: $desktop) {
 		.item-separator {
 			max-width: 100%;
 		}
