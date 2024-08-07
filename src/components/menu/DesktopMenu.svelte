@@ -19,6 +19,7 @@
 			<span class="bracket-l {item === selectedItem && 'show'}"
 				><BracketL transform="scale(0.7)" /></span
 			>
+
 			<span class="item-title">{item}</span>
 			<span class="bracket-r {item === selectedItem && 'show'}"
 				><BracketR transform="scale(0.7)" /></span
