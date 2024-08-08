@@ -309,6 +309,7 @@
 					justify-content: space-between;
 					padding-top: 15px;
 					.services-title {
+						display: block;
 						margin-left: 20px;
 
 						font-family: Space Grotesk;
@@ -320,6 +321,7 @@
 					}
 
 					.action-buttons {
+						position: static;
 						display: flex;
 						align-items: end;
 						height: 28px;
