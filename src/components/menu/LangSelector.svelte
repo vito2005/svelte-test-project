@@ -28,7 +28,7 @@
 		.language-selector {
 			position: absolute;
 			bottom: 0px;
-			right: 20px;
+			right: 25px;
 			color: $cyber-white;
 			.lang-label {
 				display: none;

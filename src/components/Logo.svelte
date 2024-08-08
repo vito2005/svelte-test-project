@@ -8,7 +8,14 @@
 	<span class="logo-text">authorities</span>
 </div>
 
-<style>
+<style lang="scss">
+	@use 'src/styles/index.scss' as *;
+
+	@media screen and (min-width: $desktop) {
+		.logo {
+			margin-top: 5px;
+		}
+	}
 	.logo {
 		display: flex;
 		flex-direction: column;
