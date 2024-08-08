@@ -37,7 +37,7 @@
 	}
 	@media screen and (max-width: $desktop) {
 		.services-menu {
-			position: absolute;
+			position: fixed;
 			top: 0;
 			left: 0;
 			z-index: 2;
@@ -46,6 +46,11 @@
 			display: flex;
 			width: 100%;
 			flex-direction: column;
+			.menu-footer {
+				position: absolute;
+				bottom: 50px;
+				left: 22px;
+			}
 		}
 
 		.menu-header {
@@ -76,10 +81,6 @@
 			margin: 0;
 			padding: 0;
 			list-style-type: none;
-		}
-
-		.menu-footer {
-			margin-top: auto;
 		}
 
 		.menu-item.current {

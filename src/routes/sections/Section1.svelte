@@ -22,23 +22,37 @@
 
 <style lang="scss">
 	@use 'src/styles/index.scss' as *;
-
+	$line-color: rgba(56, 118, 227, 1);
 	.section-1 {
 		display: flex;
 		align-items: end;
 		height: 198px;
-		border-top: 2px solid #3876e333;
-		border-bottom: 2px solid #3876e333;
+		background-image: linear-gradient(
+			$line-color,
+			$line-color 1px,
+			transparent 1px,
+			transparent 100px,
+			$line-color 100px,
+			$line-color 101px,
+			transparent 101px,
+			transparent 200px,
+			$line-color 200px,
+			$line-color 201px,
+			transparent 201px,
+			transparent 100%
+		);
+		// border-top: 2px solid $line-color;
+		// border-bottom: 2px solid $line-color;
 		position: relative;
-		&::before {
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 2px; /* Adjust thickness as needed */
-			background-color: #3876e333; /* Color of the line */
-			top: 50%;
-			transform: translateY(-50%);
-		}
+		// &::before {
+		// 	content: '';
+		// 	position: absolute;
+		// 	width: 100%;
+		// 	height: 2px; /* Adjust thickness as needed */
+		// 	background-color: $line-color; /* Color of the line */
+		// 	top: 50%;
+		// 	transform: translateY(-50%);
+		// }
 
 		.title {
 			width: 370px;

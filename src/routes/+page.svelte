@@ -314,4 +314,11 @@
 		object-fit: cover;
 		object-position: center;
 	}
+	// @media (max-width: $desktop) {
+	// 	.background-image {
+	// 		width: 100%;
+	// 		object-fit: cover;
+	// 		object-position: 0px 0px;
+	// 	}
+	// }
 </style>
