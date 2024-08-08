@@ -25,6 +25,10 @@
 		cursor: pointer;
 		&.current {
 			border-left: 6px solid $cyber-blue;
+			.item-number {
+				margin-left: 16px;
+				margin-right: 82px;
+			}
 		}
 	}
 
@@ -34,16 +38,35 @@
 		&.show {
 			display: inline-block;
 			color: $cyber-blue;
+			margin-left: -8px;
+			margin-right: 8px;
+		}
+	}
+
+	.bracket-l {
+		&.show {
+			margin-left: -8px;
+			margin-right: 8px;
+		}
+	}
+
+	.bracket-r {
+		&.show {
+			margin-left: 8px;
+			margin-right: -8px;
 		}
 	}
 
 	.item-title {
 		color: $cyber-blue;
 		text-transform: uppercase;
-		font:
-			400 30px/1 Space Grotesk,
-			sans-serif;
-		margin: 0 10px;
+		font-family: Space Grotesk;
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 36.35px;
+		text-align: left;
+
+		margin: 0;
 	}
 
 	.item-number {
@@ -54,7 +77,7 @@
 		line-height: 20.3px;
 		text-align: left;
 
-		margin: 0 10px;
+		margin: 0 94px 0 22px;
 	}
 
 	.item-separator {
