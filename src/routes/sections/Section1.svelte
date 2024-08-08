@@ -39,6 +39,7 @@
 			<ArrowRight />
 		</div>
 		<a class="audit-link" href="#">Request a security audit</a>
+		<div class="empty-content"></div>
 	</div>
 
 	<div class="services-wrapper">
@@ -66,11 +67,11 @@
 	@use 'src/styles/index.scss' as *;
 	$line-color: rgba(56, 118, 227, 1);
 	.section-1 {
+		height: 600px;
 		position: relative;
 		display: grid;
 		grid-template-rows: 200px 200px;
 		grid-template-columns: repeat(2, 1fr);
-		height: 700px;
 		background-image: linear-gradient(
 			$line-color,
 			$line-color 1px,
@@ -103,10 +104,37 @@
 			}
 		}
 		.subtitle {
+			position: relative;
 			color: $white;
-		}
-		.audit-link {
-			color: #f8faff;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			.subtitle-text {
+				width: 345px;
+				font-family: Space Grotesk;
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 27.9px;
+				text-align: left;
+			}
+			.arrow-right {
+				display: block;
+				position: absolute;
+				bottom: 10px;
+			}
+
+			.audit-link {
+				color: #f8faff;
+				grid-column: 1 / 2;
+				align-self: end;
+				margin-left: 30px;
+				margin-bottom: 10px;
+				font-family: Space Grotesk;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 23.2px;
+				text-align: left;
+			}
 		}
 
 		.arrow-right {
@@ -119,6 +147,7 @@
 			display: flex;
 			align-items: center;
 			color: $cyber-white;
+			margin-left: 30px;
 			p {
 				margin: 0;
 				margin-left: 1rem;
@@ -229,6 +258,7 @@
 
 	@media screen and (max-width: $desktop) {
 		.section-1 {
+			height: 700px;
 			display: flex;
 			flex-direction: column;
 			background-image: linear-gradient(
@@ -265,6 +295,7 @@
 			}
 
 			.subtitle {
+				display: block;
 				height: 200px;
 				position: relative;
 				background-color: rgba(255, 255, 255, 0.28);
