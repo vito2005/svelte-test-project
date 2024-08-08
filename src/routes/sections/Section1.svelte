@@ -1,5 +1,23 @@
 <script lang="ts">
 	import ArrowRight from '@src/lib/images/arrow-right.svg?component';
+	import CollapseIcon from '@src/lib/images/collapse.svg?component';
+	import CloseIcon from '@src/lib/images/close.svg?component';
+	import ExpandIcon from '@src/lib/images/expand.svg?component';
+
+	const services = [
+		{
+			title: 'Cyber Security',
+			content: 'We handle all cyber security threats to help your business continuity'
+		},
+		{
+			title: 'Network maintanance',
+			content: 'We supply hardware and help to set up and manage a secured IT infrastructure'
+		},
+		{
+			title: 'Software development',
+			content: 'Web an app development to support cyber security for your business'
+		}
+	];
 </script>
 
 <section class="section-1">
@@ -7,26 +25,52 @@
 		<div class="mouse-icon"></div>
 		<p>Scroll down</p>
 	</div>
-	<h1 class="title">CYBER SECURITY AND IT NETWORKS MAINTANANCE</h1>
-</section>
-<section class="section-2">
-	<div class="arrow-right">
-		<ArrowRight />
+	<div class="empty-space"></div>
+	<div class="title">
+		<h1 class="title-text">CYBER SECURITY AND IT NETWORKS MAINTANANCE</h1>
 	</div>
-	<p class="subtitle">
-		We protect your business continuity by searching and eliminating all kinds of cyber security
-		vulnerability issues
-	</p>
-	<a class="audit-link" href="#">Request a security audit</a>
+
+	<div class="subtitle">
+		<p class="subtitle-text">
+			We protect your business continuity by searching and eliminating all kinds of cyber security
+			vulnerability issues
+		</p>
+		<div class="arrow-right">
+			<ArrowRight />
+		</div>
+		<a class="audit-link" href="#">Request a security audit</a>
+	</div>
+
+	<div class="services-wrapper">
+		<div class="services-header">
+			<h2 class="services-title">SERVICES</h2>
+			<div class="action-buttons">
+				<CollapseIcon />
+				<ExpandIcon />
+				<CloseIcon />
+			</div>
+		</div>
+
+		<div class="services">
+			{#each services as service}
+				<div class="service">
+					<h3 class="service-title">{service.title}</h3>
+					<p class="service-content">{service.content}</p>
+				</div>
+			{/each}
+		</div>
+	</div>
 </section>
 
 <style lang="scss">
 	@use 'src/styles/index.scss' as *;
 	$line-color: rgba(56, 118, 227, 1);
 	.section-1 {
-		display: flex;
-		align-items: end;
-		height: 198px;
+		position: relative;
+		display: grid;
+		grid-template-rows: 200px 200px;
+		grid-template-columns: repeat(2, 1fr);
+		height: 700px;
 		background-image: linear-gradient(
 			$line-color,
 			$line-color 1px,
@@ -35,48 +79,51 @@
 			$line-color 100px,
 			$line-color 101px,
 			transparent 101px,
-			transparent 200px,
-			$line-color 200px,
-			$line-color 201px,
-			transparent 201px,
 			transparent 100%
 		);
-		// border-top: 2px solid $line-color;
-		// border-bottom: 2px solid $line-color;
-		position: relative;
-		// &::before {
-		// 	content: '';
-		// 	position: absolute;
-		// 	width: 100%;
-		// 	height: 2px; /* Adjust thickness as needed */
-		// 	background-color: $line-color; /* Color of the line */
-		// 	top: 50%;
-		// 	transform: translateY(-50%);
-		// }
+		.empty-space {
+			grid-column: 1 / 3;
+			height: 200px;
+		}
 
 		.title {
-			width: 370px;
-			margin: 0 auto;
-			height: 126px;
-			padding-bottom: 14px;
 			color: $white;
-			text-transform: uppercase;
-			font-family: Space Grotesk;
-			font-size: 40px;
-			font-weight: 400;
-			line-height: 41.8px;
+			margin-left: 30px;
+			margin-top: 42px;
+			.title-text {
+				text-transform: uppercase;
+				width: 592px;
+				font-family: Space Grotesk;
+				font-size: 63px;
+				font-weight: 400;
+				line-height: 67.93px;
+				text-align: left;
+				margin: 0;
+				letter-spacing: 3px;
+			}
+		}
+		.subtitle {
+			color: $white;
+		}
+		.audit-link {
+			color: #f8faff;
+		}
+
+		.arrow-right {
+			display: none;
 		}
 
 		.scroll-down {
+			position: absolute;
+			bottom: 22px;
 			display: flex;
 			align-items: center;
 			color: $cyber-white;
-			margin-bottom: 20px;
 			p {
 				margin: 0;
 				margin-left: 1rem;
-				width: 2rem;
-				font-size: 0.8rem;
+				width: 6rem;
+				font-size: 1rem;
 				font-family: Space Grotesk;
 				font-weight: 400;
 				line-height: 13.65px;
@@ -117,47 +164,223 @@
 				}
 			}
 		}
+
+		.services-wrapper {
+			height: 200px;
+			position: relative;
+			background-color: #f8faff;
+			grid-column: 2 / 3;
+			.services-header {
+				display: flex;
+				justify-content: space-between;
+				padding-top: 10px;
+
+				.action-buttons {
+					position: absolute;
+					top: 5px;
+					right: 16px;
+					display: flex;
+					align-items: end;
+					height: 28px;
+					justify-content: space-between;
+					width: 58px;
+					color: #274dbe;
+				}
+				.services-title {
+					display: none;
+				}
+			}
+			.services {
+				display: flex;
+				margin-left: 20px;
+				margin-top: 55px;
+				justify-content: space-between;
+
+				.service {
+					max-width: 260px;
+					font-family: Space Grotesk;
+					color: $cyber-blue;
+					text-align: left;
+					&:last-child {
+						margin-right: 0;
+					}
+
+					display: flex;
+					flex-direction: column;
+
+					.service-title {
+						font-size: 16px;
+						font-weight: 500;
+						line-height: 23.2px;
+						flex: 1;
+					}
+					.service-content {
+						margin-top: 0;
+						max-width: 190px;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 20.3px;
+						flex: 1;
+					}
+				}
+			}
+		}
 	}
 
-	.section-2 {
-		height: 200px;
-		position: relative;
-		background-color: rgba(255, 255, 255, 0.28);
-		padding-top: 10px;
+	@media screen and (max-width: $desktop) {
+		.section-1 {
+			display: flex;
+			flex-direction: column;
+			background-image: linear-gradient(
+				$line-color,
+				$line-color 1px,
+				transparent 1px,
+				transparent 100px,
+				$line-color 100px,
+				$line-color 101px,
+				transparent 101px,
+				transparent 100%
+			);
+			.empty-space {
+				display: none;
+			}
+			.title {
+				display: flex;
+				align-items: center;
+				height: 200px;
+				margin: 0;
 
-		.arrow-right {
-			position: absolute;
-			bottom: 32px;
-			margin-left: 20px;
-			color: $cyber-white;
-		}
+				.title-text {
+					width: 370px;
+					margin-left: 200px;
+					margin-top: 0;
+					margin-bottom: -40px;
+					text-transform: uppercase;
+					font-family: Space Grotesk;
+					font-size: 40px;
+					font-weight: 400;
+					line-height: 41.8px;
+					letter-spacing: normal;
+				}
+			}
 
-		.subtitle {
-			margin-left: 230px;
-			width: 450px;
-			//styleName: Mobile/Text — Big;
-			font-family: Space Grotesk;
-			font-size: 18px;
-			font-weight: 400;
-			line-height: 27.9px;
-			text-align: left;
-			color: $white;
-		}
+			.subtitle {
+				height: 200px;
+				position: relative;
+				background-color: rgba(255, 255, 255, 0.28);
+				font-family: Space Grotesk;
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 27.9px;
+				text-align: left;
 
-		.audit-link {
-			position: absolute;
-			bottom: 30px;
-			margin-left: 230px;
-			width: 200px;
-			color: white;
-			text-decoration: underline;
-			margin-top: 20px;
-			font-family: Space Grotesk;
-			font-size: 16px;
-			font-weight: 400;
-			line-height: 23.2px;
-			text-align: left;
-			color: #f8faff;
+				.subtitle-text {
+					width: 450px;
+					margin-left: 200px;
+				}
+
+				.arrow-right {
+					display: block;
+					position: absolute;
+					bottom: 15px;
+					margin-left: 15px;
+					color: $cyber-white;
+				}
+
+				.audit-link {
+					position: absolute;
+					bottom: 15px;
+					margin-left: 200px;
+					width: 200px;
+					text-decoration: underline;
+					margin-top: 20px;
+					font-family: Space Grotesk;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 23.2px;
+					text-align: left;
+				}
+			}
+
+			.services-wrapper {
+				height: 300px;
+				.services-header {
+					display: flex;
+					justify-content: space-between;
+					padding-top: 15px;
+					.services-title {
+						margin-left: 20px;
+
+						font-family: Space Grotesk;
+						font-size: 16px;
+						font-weight: 500;
+						line-height: 23.2px;
+						text-align: left;
+						color: $cyber-blue;
+					}
+
+					.action-buttons {
+						display: flex;
+						align-items: end;
+						height: 28px;
+						justify-content: space-between;
+						width: 58px;
+						margin-right: 20px;
+						color: #274dbe;
+					}
+				}
+				.services {
+					display: flex;
+					margin-left: 200px;
+					margin-top: 55px;
+
+					.service {
+						margin-right: 45px;
+						font-family: Space Grotesk;
+						color: $cyber-blue;
+						text-align: left;
+						&:last-child {
+							margin-right: 0;
+						}
+
+						display: flex;
+						flex-direction: column;
+
+						.service-title {
+							width: 50px;
+							font-size: 16px;
+							font-weight: 500;
+							line-height: 23.2px;
+							flex: 1;
+						}
+						.service-content {
+							width: 160px;
+							font-size: 14px;
+							font-weight: 400;
+							line-height: 20.3px;
+							flex: 1;
+						}
+					}
+				}
+			}
+
+			.scroll-down {
+				top: 37%;
+				bottom: auto;
+				display: flex;
+				align-items: center;
+				color: $cyber-white;
+				p {
+					margin: 0;
+					margin-left: 1rem;
+					width: 2rem;
+					font-size: 0.8rem;
+					font-family: Space Grotesk;
+					font-weight: 400;
+					line-height: 13.65px;
+					text-align: left;
+				}
+			}
 		}
 	}
 </style>

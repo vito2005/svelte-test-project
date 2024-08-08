@@ -38,6 +38,7 @@
 		width: 100%;
 		margin-left: 130px;
 		margin-right: 22px;
+		justify-content: space-between;
 	}
 
 	.menu-item {
@@ -45,7 +46,6 @@
 		display: flex;
 		align-items: center;
 		cursor: pointer;
-		margin-right: 180px;
 		white-space: nowrap;
 
 		font-family: Space Grotesk;
@@ -58,7 +58,6 @@
 			display: flex;
 			justify-content: end;
 			margin-right: 0;
-			width: 100%;
 		}
 		.bracket-l,
 		.bracket-r {

@@ -21,7 +21,7 @@
 		.menu-icon {
 			position: fixed;
 			top: 13px;
-			right: 40px;
+			right: 20px;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
