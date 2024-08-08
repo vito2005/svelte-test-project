@@ -69,7 +69,9 @@
 		{#if menuOpen}
 			<MobileMenu {menuItems} />
 		{/if}
-		<LangSelector />
+		<div class="lang-selector-wrapper">
+			<LangSelector />
+		</div>
 	</header>
 
 	<Section1 />
@@ -142,6 +144,10 @@
 			align-items: center;
 			padding: 7px;
 			width: 100%;
+
+			.lang-selector-wrapper {
+				display: none;
+			}
 		}
 	}
 
