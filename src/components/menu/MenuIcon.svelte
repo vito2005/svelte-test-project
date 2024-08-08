@@ -20,8 +20,8 @@
 	@media screen and (max-width: $desktop) {
 		.menu-icon {
 			position: absolute;
-			top: 36px;
-			right: 22px;
+			top: 13px;
+			right: 40px;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
