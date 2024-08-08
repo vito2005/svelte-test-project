@@ -57,7 +57,6 @@
 			max-width: 100%;
 			gap: 20px;
 			justify-content: space-between;
-			margin-left: 133px;
 			color: rgba(16, 88, 213, 0.5);
 		}
 
