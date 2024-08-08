@@ -100,14 +100,14 @@
 		background:
 			linear-gradient(180deg, rgba(12, 101, 255, 0.79) 0%, rgba(12, 101, 255, 0.79) 100%) 0% 0%
 				no-repeat padding-box,
-			url('src/lib/images/background-image.jpg') 49% -86%/110% auto;
+			url('./src/lib/images/background-image.jpg') 49% -86%/110% auto;
 	}
 	@media screen and (max-width: $desktop) {
 		.container {
 			background:
 				linear-gradient(180deg, rgba(12, 101, 255, 0.79) 0%, rgba(12, 101, 255, 0.79) 100%) 0% 0%
 					no-repeat padding-box,
-				url('src/lib/images/background-image.jpg') 98% -24%/145% auto;
+				url('./src/lib/images/background-image.jpg') 98% -24%/145% auto;
 		}
 	}
 
