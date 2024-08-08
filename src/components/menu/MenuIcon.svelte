@@ -32,7 +32,7 @@
 		}
 
 		.menu-icon div {
-			width: 24px;
+			width: 21px;
 			height: 2px;
 			background-color: rgba(230, 237, 250, 1);
 			transition: all 0.3s ease-in-out;
