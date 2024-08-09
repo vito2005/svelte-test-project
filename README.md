@@ -1,3 +1,3 @@
 # Svelte test progect
 
-landing page for Secure authorities
+Landing page for Secure authorities
