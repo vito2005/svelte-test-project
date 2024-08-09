@@ -89,8 +89,10 @@
 
 		.title {
 			color: $white;
-			margin-left: 30px;
-			margin-top: 42px;
+			padding-left: 30px;
+			padding-top: 42px;
+			grid-row: 2/4;
+			background: rgba(255, 255, 255, 0.1);
 			.title-text {
 				text-transform: uppercase;
 				width: 592px;
@@ -107,33 +109,57 @@
 			position: relative;
 			color: $white;
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: 1fr 0.65fr;
 			grid-template-rows: repeat(2, 1fr);
+
 			.subtitle-text {
-				width: 345px;
+				width: 100%;
+				padding: 15px;
+				margin: 0;
 				font-family: Space Grotesk;
 				font-size: 18px;
 				font-weight: 400;
 				line-height: 27.9px;
 				text-align: left;
+				grid-row: 1/3;
+				grid-column: 1/2;
+				background-color: rgba(255, 255, 255, 0.18);
 			}
 			.arrow-right {
 				display: block;
 				position: absolute;
 				bottom: 10px;
+				left: 15px;
 			}
 
 			.audit-link {
 				color: #f8faff;
-				grid-column: 1 / 2;
+				position: absolute;
 				align-self: end;
-				margin-left: 30px;
+				margin-left: 45px;
 				margin-bottom: 10px;
 				font-family: Space Grotesk;
 				font-size: 16px;
 				font-weight: 400;
 				line-height: 23.2px;
 				text-align: left;
+			}
+
+			.empty-content {
+				grid-row: 1/3;
+				grid-column: 2 / 3;
+				width: 100%;
+				justify-self: end;
+				background-image: linear-gradient(
+					$line-color,
+					$line-color 1px,
+					transparent 1px,
+					transparent 100px,
+					$line-color 100px,
+					$line-color 101px,
+					transparent 101px,
+					transparent 100%
+				);
 			}
 		}
 
@@ -279,6 +305,7 @@
 				align-items: center;
 				height: 200px;
 				margin: 0;
+				padding: 0;
 
 				.title-text {
 					width: 370px;
@@ -306,15 +333,18 @@
 				text-align: left;
 
 				.subtitle-text {
+					position: relative;
+					background-color: transparent;
+					padding: 0;
 					width: 450px;
 					margin-left: 200px;
+					margin-top: 25px;
 				}
 
 				.arrow-right {
 					display: block;
 					position: absolute;
 					bottom: 15px;
-					margin-left: 15px;
 					color: $cyber-white;
 				}
 
@@ -322,9 +352,9 @@
 					position: absolute;
 					bottom: 15px;
 					margin-left: 200px;
+					margin-bottom: 0;
 					width: 200px;
 					text-decoration: underline;
-					margin-top: 20px;
 					font-family: Space Grotesk;
 					font-size: 16px;
 					font-weight: 400;
@@ -403,6 +433,7 @@
 				display: flex;
 				align-items: center;
 				color: $cyber-white;
+				margin-left: 0px;
 				p {
 					margin: 0;
 					margin-left: 1rem;

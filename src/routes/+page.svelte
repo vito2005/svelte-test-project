@@ -119,36 +119,27 @@
 		position: relative;
 		height: 100px;
 	}
-	@media screen and (max-width: $desktop) {
-		.header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			width: 100%;
-
-			.lang-selector-wrapper {
-				display: none;
-			}
-		}
-	}
 
 	.section-3 {
-		height: 642px;
 		background: $cyber-white;
 
 		display: grid;
-		grid-template-rows: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 300px);
 		grid-template-columns: repeat(4, 1fr);
+
 		.title {
-			width: 480px;
-			margin: 20px 15px;
-			text-transform: uppercase;
+			width: 764px;
+			height: 188px;
+			margin-left: 30px;
+			margin-top: 41px;
 			font-family: Space Grotesk;
-			font-size: 30px;
+			font-size: 45px;
 			font-weight: 400;
-			line-height: 31.35px;
+			line-height: 47.03px;
 			text-align: left;
+			letter-spacing: 2px;
 			color: $cyber-blue;
+			text-transform: uppercase;
 
 			grid-column-start: 1;
 			grid-column-end: 4;
@@ -158,23 +149,22 @@
 			img {
 				position: absolute;
 				right: 0;
+				width: 454px;
+				height: 300px;
 			}
 		}
 		.vulterability-issues {
-			margin-top: 45px;
-			grid-column-start: 2;
-			grid-column-end: 5;
+			grid-column: 3/5;
+			grid-row-start: 2;
 			display: flex;
+			align-items: end;
 			.issue {
 				color: $cyber-blue;
 				margin-right: 50px;
-				&:last-child {
-					margin-right: 0;
-					margin-left: 40px;
-				}
+				margin-bottom: 10px;
 
 				h3 {
-					width: 110px;
+					width: 150px;
 					font-family: Space Grotesk;
 					font-size: 16px;
 					font-weight: 500;
@@ -192,17 +182,18 @@
 		}
 
 		.report-issue {
-			grid-column-start: 2;
-			grid-column-end: 5;
-
+			grid-column-start: 1;
+			grid-column-end: 2;
+			height: 200px;
+			width: 450px;
+			align-self: end;
+			padding: 0 30px;
 			position: relative;
 			background: $cyber-blue;
-			padding: 21px;
-			margin-top: 20px;
 			.title {
 				width: 280px;
 				margin: 0;
-
+				margin-top: 30px;
 				font-family: Space Grotesk;
 				font-size: 18px;
 				font-weight: 400;
@@ -235,25 +226,120 @@
 			}
 		}
 	}
+	@media screen and (max-width: $desktop) {
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
 
-	.background-image {
-		position: absolute;
-		top: 0;
-		left: 0;
-		max-width: $desktop-max;
-		margin: 0 auto;
-		z-index: -1;
-		inset: 0;
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
-		object-position: center;
-	}
-	@media (max-width: $desktop) {
-		.background-image {
-			height: auto;
-			object-fit: cover;
-			object-position: 0px 0px;
+			.lang-selector-wrapper {
+				display: none;
+			}
+		}
+
+		.section-3 {
+			height: 642px;
+			grid-template-rows: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
+
+			.title {
+				width: 480px;
+				margin: 20px 15px;
+				font-size: 30px;
+				font-weight: 400;
+				line-height: 31.35px;
+				text-align: left;
+				color: $cyber-blue;
+				letter-spacing: normal;
+			}
+
+			.vulterability-image {
+				position: relative;
+				img {
+					position: absolute;
+					right: 0;
+					width: auto;
+					height: auto;
+				}
+			}
+
+			.vulterability-issues {
+				margin-top: 30px;
+				grid-column-start: 2;
+				grid-column-end: 5;
+				display: flex;
+				align-items: start;
+				.issue {
+					color: $cyber-blue;
+					margin-right: 50px;
+					&:last-child {
+						margin-right: 0;
+						margin-left: 40px;
+					}
+
+					h3 {
+						font-family: Space Grotesk;
+						font-size: 16px;
+						font-weight: 500;
+						line-height: 23.2px;
+						text-align: left;
+					}
+					p {
+						font-family: Space Grotesk;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 20.3px;
+						text-align: left;
+					}
+				}
+			}
+
+			.report-issue {
+				height: auto;
+				width: auto;
+				grid-column-start: 2;
+				grid-column-end: 5;
+
+				position: relative;
+				background: $cyber-blue;
+				padding: 21px;
+				margin-top: 20px;
+				.title {
+					width: 280px;
+					margin: 0;
+
+					font-family: Space Grotesk;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 27.9px;
+					text-align: left;
+					text-transform: none;
+					color: $white;
+				}
+
+				.action-buttons {
+					position: absolute;
+					top: 20px;
+					right: 20px;
+					color: $cyber-white;
+					display: flex;
+					align-items: end;
+					height: 28px;
+					justify-content: space-between;
+					width: 58px;
+				}
+				a {
+					position: absolute;
+					bottom: 20px;
+					font-family: Space Grotesk;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 23.2px;
+					text-align: left;
+					color: $cyber-white;
+				}
+			}
 		}
 	}
 </style>
