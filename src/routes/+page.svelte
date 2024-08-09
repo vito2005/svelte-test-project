@@ -342,4 +342,66 @@
 			}
 		}
 	}
+
+	@media screen and (max-width: $tablet) {
+		.container {
+		}
+		.section-3 {
+			display: flex;
+			flex-direction: column;
+			.title {
+				max-width: 330px;
+				font-size: 30px;
+				font-weight: 400;
+				line-height: 31.35px;
+				text-align: left;
+			}
+			.vulterability-issues {
+				flex-direction: column;
+
+				.issue {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					grid-template-rows: repeat(2, 1fr);
+					margin-right: 0;
+					margin-left: 20px;
+					margin-top: 50px;
+					gap: 0px 40px;
+					&:last-child {
+						margin-left: 20px;
+					}
+
+					h3 {
+						grid-row: 1/3;
+						margin: 0;
+					}
+
+					p {
+						margin: 0;
+					}
+				}
+			}
+			.vulterability-image {
+				img {
+					position: static;
+					width: 100%;
+				}
+			}
+
+			.report-issue {
+				margin-top: 0px;
+				padding: 0;
+				width: 100%;
+				position: relative;
+
+				.title {
+					width: 100%;
+					margin-left: 20px;
+				}
+				a {
+					margin-left: 20px;
+				}
+			}
+		}
+	}
 </style>

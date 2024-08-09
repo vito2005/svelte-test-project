@@ -447,4 +447,62 @@
 			}
 		}
 	}
+
+	@media screen and (max-width: $tablet) {
+		.section-1 {
+			height: 1300px;
+			.title {
+				height: 300px;
+				.title-text {
+					height: inherit;
+					margin-left: 20px;
+					margin-top: 76px;
+
+					max-width: 265px;
+					font-size: 40px;
+					font-weight: 400;
+					line-height: 41.8px;
+					text-align: left;
+				}
+			}
+
+			.subtitle {
+				height: 300px;
+				.subtitle-text {
+					height: inherit;
+					margin-left: 20px;
+					max-width: 310px;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 27.9px;
+					text-align: left;
+				}
+				.audit-link {
+					margin-left: 60px;
+				}
+			}
+			.scroll-down {
+				display: none;
+			}
+
+			.services-wrapper {
+				height: 500px;
+				.services {
+					margin: 0;
+					flex-direction: column;
+
+					.service {
+						margin: 0;
+						margin-left: 20px;
+						.service-title {
+							width: 200px;
+						}
+						.service-content {
+							width: 300px;
+						}
+					}
+				}
+			}
+		}
+	}
 </style>
