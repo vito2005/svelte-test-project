@@ -43,6 +43,12 @@
 
 	function toggleMenu() {
 		menuOpen = !menuOpen;
+
+		if (menuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
 	}
 </script>
 
@@ -95,6 +101,7 @@
 	@use 'src/styles/index.scss' as *;
 
 	.container {
+		overflow: hidden;
 		max-width: $desktop-max;
 		margin: 0 auto;
 		background:
@@ -124,8 +131,8 @@
 		background: $cyber-white;
 
 		display: grid;
-		grid-template-rows: repeat(2, 300px);
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 350px);
+		grid-template-columns: repeat(2, 1fr);
 
 		.title {
 			width: 764px;
@@ -154,10 +161,11 @@
 			}
 		}
 		.vulterability-issues {
-			grid-column: 3/5;
+			grid-column: 2/5;
 			grid-row-start: 2;
 			display: flex;
 			align-items: end;
+			justify-content: space-between;
 			.issue {
 				color: $cyber-blue;
 				margin-right: 50px;
@@ -275,7 +283,6 @@
 					margin-right: 50px;
 					&:last-child {
 						margin-right: 0;
-						margin-left: 40px;
 					}
 
 					h3 {
@@ -296,18 +303,17 @@
 			}
 
 			.report-issue {
-				height: auto;
+				height: 200px;
 				width: auto;
 				grid-column-start: 2;
 				grid-column-end: 5;
 
 				position: relative;
 				background: $cyber-blue;
-				padding: 21px;
-				margin-top: 20px;
 				.title {
 					width: 280px;
 					margin: 0;
+					margin-top: 21px;
 
 					font-family: Space Grotesk;
 					font-size: 18px;
@@ -320,7 +326,7 @@
 
 				.action-buttons {
 					position: absolute;
-					top: 20px;
+					top: 10px;
 					right: 20px;
 					color: $cyber-white;
 					display: flex;
@@ -331,7 +337,7 @@
 				}
 				a {
 					position: absolute;
-					bottom: 20px;
+					bottom: 25px;
 					font-family: Space Grotesk;
 					font-size: 16px;
 					font-weight: 400;
@@ -345,11 +351,17 @@
 
 	@media screen and (max-width: $tablet) {
 		.container {
+			background:
+				linear-gradient(180deg, rgba(12, 101, 255, 0.79) 0%, rgba(12, 101, 255, 0.79) 100%) 0% 0%
+					no-repeat padding-box,
+				url('/src/lib/images/background-image.jpg') 47% -74%/331% auto;
 		}
 		.section-3 {
+			height: auto;
 			display: flex;
 			flex-direction: column;
 			.title {
+				order: 2;
 				max-width: 330px;
 				font-size: 30px;
 				font-weight: 400;
@@ -357,6 +369,7 @@
 				text-align: left;
 			}
 			.vulterability-issues {
+				order: 3;
 				flex-direction: column;
 
 				.issue {
@@ -382,6 +395,7 @@
 				}
 			}
 			.vulterability-image {
+				order: 1;
 				img {
 					position: static;
 					width: 100%;
@@ -389,17 +403,27 @@
 			}
 
 			.report-issue {
+				order: 4;
 				margin-top: 0px;
 				padding: 0;
 				width: 100%;
 				position: relative;
+				height: 200px;
+
+				.action-buttons {
+					position: absolute;
+					top: 10px;
+				}
 
 				.title {
 					width: 100%;
 					margin-left: 20px;
+					align-items: center;
+					display: flex;
 				}
 				a {
 					margin-left: 20px;
+					bottom: 24px;
 				}
 			}
 		}

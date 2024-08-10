@@ -113,16 +113,14 @@
 			grid-template-rows: repeat(2, 1fr);
 
 			.subtitle-text {
-				width: 100%;
-				padding: 15px;
-				margin: 0;
-				font-family: Space Grotesk;
-				font-size: 18px;
-				font-weight: 400;
-				line-height: 27.9px;
-				text-align: left;
-				grid-row: 1/3;
 				grid-column: 1/2;
+				grid-row: 1/3;
+				padding: 15px 0 0 15px;
+				margin: 0;
+				font:
+					18px/27.9px 'Space Grotesk',
+					sans-serif;
+				color: $white;
 				background-color: rgba(255, 255, 255, 0.18);
 			}
 			.arrow-right {
@@ -396,9 +394,10 @@
 					display: flex;
 					margin-left: 200px;
 					margin-top: 55px;
+					justify-content: start;
 
 					.service {
-						margin-right: 45px;
+						margin-right: 42px;
 						font-family: Space Grotesk;
 						color: $cyber-blue;
 						text-align: left;
@@ -450,7 +449,7 @@
 
 	@media screen and (max-width: $tablet) {
 		.section-1 {
-			height: 1300px;
+			height: 1100px;
 			.title {
 				height: 300px;
 				.title-text {
@@ -487,6 +486,12 @@
 
 			.services-wrapper {
 				height: 500px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				.services-header {
+					padding-top: 10px;
+				}
 				.services {
 					margin: 0;
 					flex-direction: column;

@@ -9,9 +9,12 @@
 
 <li class="menu-item {isCurrent && 'current'}" on:click>
 	<span class="item-number">{orderNumber}</span>
-	<span class="bracket-l {isCurrent && 'show'}"><BracketL /></span>
-	<h2 class="item-title">{title}</h2>
-	<span class="bracket-r {isCurrent && 'show'}"><BracketR /></span>
+
+	<h2 class="item-title">
+		<span class="bracket-l {isCurrent && 'show'}">&#123;</span>{title}<span
+			class="bracket-r {isCurrent && 'show'}">&#125;</span
+		>
+	</h2>
 </li>
 
 <style lang="scss">
@@ -30,67 +33,96 @@
 				margin-right: 82px;
 			}
 		}
-	}
 
-	.bracket-l,
-	.bracket-r {
-		display: none;
-		&.show {
-			display: inline-block;
+		.bracket-l,
+		.bracket-r {
+			display: none;
+			&.show {
+				text-transform: uppercase;
+				font-family: Space Grotesk;
+				font-size: 30px;
+				font-weight: 400;
+				line-height: 36.35px;
+				vertical-align: text-top;
+				display: inline-block;
+				color: $cyber-blue;
+				margin-left: -8px;
+				margin-right: 8px;
+			}
+		}
+
+		.bracket-l {
+			&.show {
+				margin-left: -8px;
+				margin-right: 8px;
+			}
+		}
+
+		.bracket-r {
+			&.show {
+				margin-left: 8px;
+				margin-right: -8px;
+			}
+		}
+
+		.item-title {
 			color: $cyber-blue;
-			margin-left: -8px;
-			margin-right: 8px;
+			text-transform: uppercase;
+			font-family: Space Grotesk;
+			font-size: 30px;
+			font-weight: 400;
+			line-height: 36.35px;
+			text-align: left;
+
+			margin: 0;
 		}
-	}
 
-	.bracket-l {
-		&.show {
-			margin-left: -8px;
-			margin-right: 8px;
+		.item-number {
+			color: $cyber-blue;
+			font-family: Space Grotesk;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20.3px;
+			text-align: left;
+
+			margin: 0 94px 0 22px;
 		}
-	}
 
-	.bracket-r {
-		&.show {
-			margin-left: 8px;
-			margin-right: -8px;
-		}
-	}
-
-	.item-title {
-		color: $cyber-blue;
-		text-transform: uppercase;
-		font-family: Space Grotesk;
-		font-size: 30px;
-		font-weight: 400;
-		line-height: 36.35px;
-		text-align: left;
-
-		margin: 0;
-	}
-
-	.item-number {
-		color: $cyber-blue;
-		font-family: Space Grotesk;
-		font-size: 14px;
-		font-weight: 400;
-		line-height: 20.3px;
-		text-align: left;
-
-		margin: 0 94px 0 22px;
-	}
-
-	.item-separator {
-		aspect-ratio: 1000;
-		object-fit: contain;
-		object-position: center;
-		width: 100%;
-		margin-top: 12px;
-	}
-
-	@media (max-width: $desktop) {
 		.item-separator {
-			max-width: 100%;
+			aspect-ratio: 1000;
+			object-fit: contain;
+			object-position: center;
+			width: 100%;
+			margin-top: 12px;
+		}
+	}
+
+	@media screen and (max-width: $tablet) {
+		.menu-item {
+			height: 120px;
+			.item-number {
+				margin-bottom: 9px;
+			}
+			.item-title {
+				margin-bottom: 9px;
+				max-width: 180px;
+				font-family: Space Grotesk;
+				font-size: 22px;
+				font-weight: 400;
+				line-height: 22px;
+				text-align: left;
+			}
+			.bracket-l,
+			.bracket-r {
+				&.show {
+					vertical-align: text-top;
+					font-family: Space Grotesk;
+					font-size: 23px;
+					font-weight: 400;
+					text-align: left;
+					line-height: 22px;
+				}
+			}
 		}
 	}
 </style>

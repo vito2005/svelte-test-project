@@ -19,7 +19,7 @@
 
 	@media screen and (max-width: $desktop) {
 		.menu-icon {
-			position: fixed;
+			position: absolute;
 			top: 13px;
 			right: 20px;
 			display: flex;
