@@ -281,9 +281,6 @@
 				.issue {
 					color: $cyber-blue;
 					margin-right: 50px;
-					&:last-child {
-						margin-right: 0;
-					}
 
 					h3 {
 						font-family: Space Grotesk;
