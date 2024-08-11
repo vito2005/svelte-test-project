@@ -93,6 +93,7 @@
 			padding-top: 42px;
 			grid-row: 2/4;
 			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(5px);
 			.title-text {
 				text-transform: uppercase;
 				width: 592px;
@@ -122,6 +123,7 @@
 					sans-serif;
 				color: $white;
 				background-color: rgba(255, 255, 255, 0.18);
+				backdrop-filter: blur(12px);
 			}
 			.arrow-right {
 				display: block;
@@ -172,6 +174,7 @@
 			align-items: center;
 			color: $cyber-white;
 			margin-left: 30px;
+			z-index: 1;
 			p {
 				margin: 0;
 				margin-left: 1rem;
@@ -304,6 +307,8 @@
 				height: 200px;
 				margin: 0;
 				padding: 0;
+				background: none;
+				backdrop-filter: none;
 
 				.title-text {
 					width: 370px;
@@ -323,7 +328,8 @@
 				display: block;
 				height: 200px;
 				position: relative;
-				background-color: rgba(255, 255, 255, 0.28);
+				background-color: rgba(255, 255, 255, 0.18);
+				backdrop-filter: blur(12px);
 				font-family: Space Grotesk;
 				font-size: 18px;
 				font-weight: 400;
@@ -333,6 +339,7 @@
 				.subtitle-text {
 					position: relative;
 					background-color: transparent;
+					backdrop-filter: none;
 					padding: 0;
 					width: 450px;
 					margin-left: 200px;

@@ -40,6 +40,13 @@
 				padding: none;
 				margin-right: 5px;
 				opacity: 0.5;
+				transition:
+					opacity 0.3s,
+					transform 0.3s;
+				&:hover {
+					opacity: 1;
+					transform: scale(1.2);
+				}
 				&.active {
 					opacity: 1;
 				}

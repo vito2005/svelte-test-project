@@ -9,9 +9,10 @@
 	import DesktopMenu from '@src/components/menu/DesktopMenu.svelte';
 	import LangSelector from '@src/components/menu/LangSelector.svelte';
 	import Section1 from './sections/Section1.svelte';
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	let menuOpen = false;
-	let innerWidth: number;
 
 	const menuItems = [
 		'IT Security',
@@ -50,55 +51,103 @@
 			document.body.style.overflow = 'auto';
 		}
 	}
+
+	let loaded = false;
+
+	onMount(async () => {
+		await new Promise((resolve) => setTimeout(resolve, 7000));
+		loaded = true;
+	});
 </script>
 
-<svelte:window bind:innerWidth />
+{#if !loaded}
+	<div class="loading-screen" out:fade>
+		<div class="background">
+			<Logo />
+		</div>
+	</div>
+{/if}
 
-<div class="container">
-	<header class="header">
-		<Logo />
-		<MenuIcon {menuOpen} on:click={toggleMenu} />
-		<DesktopMenu menuItems={menuItemsDesctop} />
-		{#if menuOpen}
-			<MobileMenu {menuItems} />
-		{/if}
-		<div class="lang-selector-wrapper">
-			<LangSelector />
-		</div>
-	</header>
-
-	<Section1 />
-
-	<section class="section-3">
-		<div class="title">
-			We solve any kind of cyber security vulnerability issues to keep your business secured
-		</div>
-		<div class="vulterability-image">
-			<img src={vImage} alt="vulterability image" />
-		</div>
-		<div class="vulterability-issues">
-			{#each issues as issue}
-				<div class="issue">
-					<h3>{issue.title}</h3>
-					<p>{issue.issue1}</p>
-					<p>{issue.issue2}</p>
-				</div>
-			{/each}
-		</div>
-		<div class="report-issue">
-			<div class="title">Can’t fix a vulnerability issue? We can help!</div>
-			<div class="action-buttons">
-				<CollapseIcon />
-				<ExpandIcon />
-				<CloseIcon />
+{#if loaded}
+	<div class="container">
+		<header class="header">
+			<Logo animation={false} />
+			<MenuIcon {menuOpen} on:click={toggleMenu} />
+			<DesktopMenu menuItems={menuItemsDesctop} />
+			{#if menuOpen}
+				<MobileMenu {menuItems} />
+			{/if}
+			<div class="lang-selector-wrapper">
+				<LangSelector />
 			</div>
-			<a href="#">Report an issue</a>
-		</div>
-	</section>
-</div>
+		</header>
+
+		<Section1 />
+
+		<section class="section-3">
+			<div class="title">
+				We solve any kind of cyber security vulnerability issues to keep your business secured
+			</div>
+			<div class="vulterability-image">
+				<img src={vImage} alt="vulterability image" />
+			</div>
+			<div class="vulterability-issues">
+				{#each issues as issue}
+					<div class="issue">
+						<h3>{issue.title}</h3>
+						<p>{issue.issue1}</p>
+						<p>{issue.issue2}</p>
+					</div>
+				{/each}
+			</div>
+			<div class="report-issue">
+				<div class="title">Can’t fix a vulnerability issue? We can help!</div>
+				<div class="action-buttons">
+					<CollapseIcon />
+					<ExpandIcon />
+					<CloseIcon />
+				</div>
+				<a href="#">Report an issue</a>
+			</div>
+		</section>
+	</div>
+{/if}
 
 <style lang="scss">
 	@use 'src/styles/index.scss' as *;
+
+	.loading-screen {
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		background: linear-gradient(to right, #274dbe, #233c7b, #1a3065, #026ff5, #0056d6);
+		background-size: 400% 400%;
+		animation: Gradient 5s ease infinite;
+		animation-fill-mode: forwards;
+		.background {
+			position: absolute;
+			max-width: $desktop-max;
+			margin: 0 auto;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+		}
+		@keyframes Gradient {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+	}
 
 	.container {
 		overflow: hidden;
@@ -121,7 +170,6 @@
 	.header {
 		display: flex;
 		padding: 0;
-		padding-left: 10px;
 		width: 100%;
 		position: relative;
 		height: 100px;
@@ -238,7 +286,6 @@
 		.header {
 			display: flex;
 			justify-content: space-between;
-			align-items: center;
 			width: 100%;
 
 			.lang-selector-wrapper {
@@ -352,6 +399,10 @@
 				linear-gradient(180deg, rgba(12, 101, 255, 0.79) 0%, rgba(12, 101, 255, 0.79) 100%) 0% 0%
 					no-repeat padding-box,
 				url('/src/lib/images/background-image.jpg') 47% -74%/331% auto;
+
+			.header {
+				padding-left: 0px;
+			}
 		}
 		.section-3 {
 			height: auto;
