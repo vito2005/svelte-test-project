@@ -12,8 +12,6 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	let menuOpen = false;
-
 	const menuItems = [
 		'IT Security',
 		'Network maintanance',
@@ -41,6 +39,8 @@
 			issue2: 'Phishing protection'
 		}
 	];
+
+	let menuOpen = false;
 
 	function toggleMenu() {
 		menuOpen = !menuOpen;
