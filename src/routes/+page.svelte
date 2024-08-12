@@ -103,9 +103,15 @@
 			<div class="report-issue">
 				<div class="title">Can’t fix a vulnerability issue? We can help!</div>
 				<div class="action-buttons">
-					<CollapseIcon />
-					<ExpandIcon />
-					<CloseIcon />
+					<span class="icon-button-wrapper">
+						<CollapseIcon />
+					</span>
+					<span class="icon-button-wrapper">
+						<ExpandIcon />
+					</span>
+					<span class="icon-button-wrapper">
+						<CloseIcon />
+					</span>
 				</div>
 				<a href="#">Report an issue</a>
 			</div>
@@ -269,6 +275,13 @@
 				height: 28px;
 				justify-content: space-between;
 				width: 58px;
+				.icon-button-wrapper {
+					display: flex;
+					cursor: pointer;
+					&:hover {
+						transform: scale(1.2);
+					}
+				}
 			}
 			a {
 				position: absolute;

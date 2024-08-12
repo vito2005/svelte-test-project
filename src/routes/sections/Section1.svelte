@@ -46,9 +46,15 @@
 		<div class="services-header">
 			<h2 class="services-title">SERVICES</h2>
 			<div class="action-buttons">
-				<CollapseIcon />
-				<ExpandIcon />
-				<CloseIcon />
+				<span class="icon-button-wrapper">
+					<CollapseIcon />
+				</span>
+				<span class="icon-button-wrapper">
+					<ExpandIcon />
+				</span>
+				<span class="icon-button-wrapper">
+					<CloseIcon />
+				</span>
 			</div>
 		</div>
 
@@ -241,6 +247,13 @@
 					justify-content: space-between;
 					width: 58px;
 					color: #274dbe;
+					.icon-button-wrapper {
+						display: flex;
+						cursor: pointer;
+						&:hover {
+							transform: scale(1.2);
+						}
+					}
 				}
 				.services-title {
 					display: none;
