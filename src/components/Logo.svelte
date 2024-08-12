@@ -133,23 +133,6 @@
 		}
 	}
 
-	@keyframes draw {
-		0% {
-			fill: transparent;
-		}
-		50% {
-			fill: rgb(255, 255, 255, 0.5);
-		}
-		75% {
-			fill: rgb(255, 255, 255, 0.8);
-		}
-		100% {
-			fill: $white;
-			stroke-dashoffset: 0;
-			stroke: none;
-		}
-	}
-
 	.logo-text {
 		width: auto;
 		margin-left: 5px;
