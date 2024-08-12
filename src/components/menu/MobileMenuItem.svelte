@@ -125,4 +125,10 @@
 			}
 		}
 	}
+
+	@media screen and (max-height: $mobile-height-sm) {
+		.menu-item {
+			height: 100px;
+		}
+	}
 </style>
