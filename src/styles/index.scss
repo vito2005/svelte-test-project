@@ -10,7 +10,7 @@ $cyber-blue: #1058d5;
 
 @font-face {
 	font-family: 'Space Grotesk';
-	src: url('$lib/fonts/SpaceGrotesk.ttf');
+	src: local('Space Grotesk'), url('/fonts/SpaceGrotesk.ttf');
 }
 
 @keyframes draw {
