@@ -90,14 +90,15 @@
 
 	@media screen and (min-width: $desktop) {
 		.logo {
-			margin-top: 11px;
+			// margin-top: 11px;
 		}
 	}
 
 	.logo {
 		position: static;
-		width: auto;
-		margin-left: 15px;
+		width: 110px;
+		display: flex;
+		// margin-left: 15px;
 
 		path {
 			fill: $white;
@@ -105,8 +106,8 @@
 			stroke: none;
 		}
 		&.animation {
-			position: absolute;
-			width: 200px;
+			// position: absolute;
+			width: 110px;
 			left: 30px;
 			top: 10px;
 			left: 50%;
@@ -126,6 +127,7 @@
 
 		@keyframes scaleAndMove {
 			100% {
+				position: absolute;
 				transform: scale(1);
 				left: 0px;
 				top: 0px;
@@ -135,6 +137,9 @@
 
 	.logo-text {
 		width: auto;
+		display: flex;
+		flex-direction: column;
+		transform: scale(0.8) translate(-9px, -3px);
 		margin-left: 5px;
 		font-family: 'Space Grotesk', sans-serif;
 		font-optical-sizing: auto;
@@ -150,7 +155,7 @@
 		.first-word {
 			position: static;
 			&.animation {
-				position: absolute;
+				// position: absolute;
 				bottom: -18px;
 				left: 5px;
 				bottom: 0;
@@ -162,7 +167,7 @@
 		.second-word {
 			position: static;
 			&.animation {
-				position: absolute;
+				// position: absolute;
 				bottom: -33px;
 				left: 5px;
 				bottom: 0;
