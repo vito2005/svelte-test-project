@@ -221,6 +221,7 @@
 			align-items: end;
 			justify-content: space-between;
 			.issue {
+				margin-left: 20px;
 				color: $cyber-blue;
 				margin-right: 50px;
 				margin-bottom: 10px;
@@ -257,10 +258,11 @@
 				margin: 0;
 				margin-top: 30px;
 				font-family: Space Grotesk;
-				font-size: 18px;
-				font-weight: 400;
+				font-size: 17px;
+				font-weight: 200;
 				line-height: 27.9px;
 				text-align: left;
+				letter-spacing: 0.7px;
 				text-transform: none;
 				color: $white;
 			}
@@ -373,13 +375,6 @@
 					width: 280px;
 					margin: 0;
 					margin-top: 21px;
-
-					font-family: Space Grotesk;
-					font-size: 18px;
-					font-weight: 400;
-					line-height: 27.9px;
-					text-align: left;
-					text-transform: none;
 					color: $white;
 				}
 
@@ -479,7 +474,6 @@
 				}
 
 				.title {
-					width: 100%;
 					margin-left: 20px;
 					align-items: center;
 					display: flex;
