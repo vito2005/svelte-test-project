@@ -7,6 +7,11 @@ $white: #fff;
 $cyber-white: #e6edfa;
 $cyber-blue: #1058d5;
 
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('$lib/fonts/SpaceGrotesk.ttf');
+}
+
 @keyframes draw {
 	0% {
 		fill: transparent;
