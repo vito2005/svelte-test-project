@@ -277,6 +277,8 @@
 				width: 58px;
 				.icon-button-wrapper {
 					display: flex;
+					height: 10px;
+					align-items: end;
 					cursor: pointer;
 					&:hover {
 						transform: scale(1.2);

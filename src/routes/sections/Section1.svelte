@@ -250,6 +250,8 @@
 					.icon-button-wrapper {
 						display: flex;
 						cursor: pointer;
+						height: 10px;
+						align-items: end;
 						&:hover {
 							transform: scale(1.2);
 						}
