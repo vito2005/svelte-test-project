@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BracketL from '@src/lib/images/bracket-l.svg?component';
 	import BracketR from '@src/lib/images/bracket-r.svg?component';
+	import { fly } from 'svelte/transition';
 
 	export let menuItems: string[];
 	export let selectedItem: string = menuItems[0];
@@ -42,8 +43,10 @@
 	}
 
 	.menu-item {
-		height: 31px;
+		position: relative;
 		display: flex;
+		height: 31px;
+		margin-top: 5px;
 		align-items: center;
 		cursor: pointer;
 		white-space: nowrap;
@@ -54,13 +57,21 @@
 		line-height: 20.3px;
 		text-align: left;
 		color: $cyber-white;
+
+		transition: transform 0.2s ease-in-out;
+
 		&:last-child {
 			display: flex;
 			justify-content: end;
 			margin-right: 0;
 		}
+
 		.bracket-l,
 		.bracket-r {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			transition: transform 0.5s ease-in;
 			display: none;
 			&.show {
 				display: flex;
@@ -68,15 +79,46 @@
 			}
 		}
 		.bracket-l {
-			margin-right: 7px;
-		}
-		.bracket-r {
-			margin-left: 7px;
-		}
-	}
+			left: -8px;
 
-	.bracket-r.show path {
-		transform: scale(0.5) !important; /* Add !important to override other styles */
+			&.show {
+				transform: translateX(-8px);
+
+				animation: bracket-l-showing 0.5s ease-in-out;
+			}
+		}
+		@keyframes bracket-l-showing {
+			0% {
+				transform: translateX(0px);
+			}
+
+			100% {
+				transform: translateX(-8px);
+			}
+		}
+
+		.bracket-r {
+			right: -8px;
+			&.show {
+				transform: translateX(8px);
+
+				animation: bracket-r-showing 0.5s ease-in-out;
+			}
+		}
+
+		@keyframes bracket-r-showing {
+			0% {
+				transform: translateX(0px);
+			}
+
+			100% {
+				transform: translateX(8px);
+			}
+		}
+
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 
 	@media screen and (max-width: $desktop) {

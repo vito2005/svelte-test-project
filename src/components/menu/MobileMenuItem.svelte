@@ -55,11 +55,37 @@
 			&.show {
 				margin-left: -8px;
 				margin-right: 8px;
+				animation: bracket-l-showing 0.5s ease-in-out;
+			}
+		}
+
+		@keyframes bracket-l-showing {
+			0% {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			100% {
+				margin-left: -8px;
+				margin-right: 8px;
 			}
 		}
 
 		.bracket-r {
 			&.show {
+				margin-left: 8px;
+				margin-right: -8px;
+				animation: bracket-r-showing 0.5s ease-in-out;
+			}
+		}
+
+		@keyframes bracket-r-showing {
+			0% {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			100% {
 				margin-left: 8px;
 				margin-right: -8px;
 			}

@@ -90,7 +90,7 @@
 
 	@media screen and (min-width: $desktop) {
 		.logo {
-			margin-top: 7px;
+			margin-top: 11px;
 		}
 	}
 
@@ -225,7 +225,7 @@
 			margin-top: 13px;
 			&.animation {
 				top: 40%;
-				left: 35%;
+				left: 30%;
 				transform: scale(1.8);
 			}
 		}
