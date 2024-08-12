@@ -113,7 +113,7 @@
 						<CloseIcon />
 					</span>
 				</div>
-				<a href="#">Report the issue</a>
+				<a href="#">Report an issue</a>
 			</div>
 		</section>
 	</div>
